@@ -1,7 +1,7 @@
 # Heaps, Priority queues and Heapsort
 
 # Heaps
-Heaps data structures are complete binary trees that makes it apt to be implemented as arrays.
+Heap data structures are complete binary trees that makes it apt to be implemented as arrays.
 ![heap as binary tree and array implementation](max-heap.jpg)
 Image source: Introduction to algorithms. Cormen Et, al
 
@@ -76,10 +76,57 @@ $\leq (N+1) \frac{1}{(1-x)^2}$\
 Substituiting $x = \frac{1}{2}$ The runtime comes to 
 **$O(N)$**
 
-
-
 # Priority Queueus
+A priority queue is a data structure to maintain $n$ elements with a priorirty assigned to each of them. \
+Max priority queue is used in a job scheduler which selelcts the highest priorty jobs in the queue of remaining tasks.\
+Min prioirity queue is used in an event driven simulator with each items priority being it's time of occurance.\
 
+A heap can be used to implement a priority queue.\
+
+## Priority queuue operations
+
+Max Element : Retrive maximum element from the queue
+
+    def max_element(arr):
+        return arr[0] 
+*Runtime analysis of max_element*: The opertion runs at constant time. $O(1)$
+
+Delete Max Element : Remove the maximum element from the priority queue
+
+    def delete_max(arr):
+        N = len(arr)
+        if N<1:
+            return -1
+        arr[0], arr[N-1] = arr[N-1], arr[0] // swap the first element with the last element
+        arr.pop() // remove the last element
+        max_heapify(arr, 0)
+        return 1
+*Runtime analysis of delelte_max*: The swap operation is a constant time operation and max_heapify requires $O(logn)$ making delete_max to be $O(logn)$
+
+Increase key of an element : Increase the priority associated with an element.
+
+        def increase_key(arr, i, key):
+            arr[i] = key
+            while(i>0 and arr[i//2] < arr[i]):
+                arr[i//2], arr[i] = arr[i], arr[i//2]
+                i = i//2
+*Runtime analysis of increase_key*: This operation traverses the tree from node to the root, in the worst case the node will be a leaf. Which makes the runtime of the procedure to be $O(logn)$
+
+Insert element into the priority queue: 
+
+    def insert(arr, key):
+        arr.append(key)
+        i = len(arr)-1
+        while(i>0 and arr[i//2] < arr[i]):
+                arr[i//2], arr[i] = arr[i], arr[i//2]
+                i = i//2
+or
+
+    def insert(arr, key):
+        arr.append(sys.minint)
+        increase_key(arr, len(arr)-1, key)
+
+*Runtime analysis of insert* : after adding the value to the array which takes constant time in python, the 
 # Heap sort
 
 ##### Ref: CLRS
