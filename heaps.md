@@ -62,7 +62,7 @@ Runtime will be in the order of $O(logn)$
 
 <ins>Assympototically tight analysis</ins> : If we observe carefully the max_heapify takes O(logn) or O(h). The height of the tree is changing for each node. h=0 for all leaf nodes, h = 1 for all nodes one level up, h = 2 for all nodes before and so on. Given the number of leaf nodes in a tree is $(N+1)/2$, the runtime can be expanded as follows 
 
-$= (N+1)/2*0 + (N+1)/2^2*1 + (N+1)/2^3*2 + ... + 1$\
+$= \frac{N+1}{2}*0 + \frac{N+1}{2^2}*1 + \frac{N+1}{2^3}*2 + ... + 1$\
 $= \sum_{0}^{logn} \frac{N+1}{2^i} * (i-1)$\
 $= (N+1)\sum_{0}^{logn} \frac{i-1}{2^i}$\
 substituiting $x = \frac{1}{2}$\
