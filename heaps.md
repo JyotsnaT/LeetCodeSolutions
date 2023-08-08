@@ -62,8 +62,20 @@ Runtime will be in the order of $O(logn)$
 
 <ins>Assympototically tight analysis</ins> : If we observe carefully the max_heapify takes O(logn) or O(h). The height of the tree is changing for each node. h=0 for all leaf nodes, h = 1 for all nodes one level up, h = 2 for all nodes before and so on. Given the number of leaf nodes in a tree is $(N+1)/2$, the runtime can be expanded as follows 
 
-    $(N+1)/2*0 + (N+1)/2^2*1 + (N+1)/2^3*2 + ... + 1$
-    $$\left(\sum_{0}^{logn} N/(2^i))$$
+$= (N+1)/2*0 + (N+1)/2^2*1 + (N+1)/2^3*2 + ... + 1$\
+$= \sum_{0}^{logn} \frac{N+1}{2^i} * (i-1)$\
+$= (N+1)\sum_{0}^{logn} \frac{i-1}{2^i}$\
+substituiting $x = \frac{1}{2}$\
+$= (N+1)\sum_{0}^{logn} (i-1)*x^i$\
+$= (N+1) \frac{d}{dx}\sum_{0}^{logn} x^{i-1}$\
+The upper bound can be defined if $logn \to \infty$\
+$\leq (N+1) \frac{d}{dx}[\sum_{0}^{\infty} x^{i-1}]$\
+Since the sum of geometric series till $\infty$ is equal to $\frac{1}{1-r}$
+$\leq (N+1) \frac{d}{dx}(\frac{1}{1-x})$\
+$\leq (N+1) \frac{1}{(1-x)^2}$\
+Substituiting $x = \frac{1}{2}$ The runtime comes to 
+**$O(N)$**
+
 
 
 # Priority Queueus
