@@ -38,11 +38,40 @@ graph TD;
 6. Maximum number of leaf nodes in a binary tree are $2^h$ given $h$ is the height of the binary tree or  $2^{l-1}$ given the tree has $l$ levels.
 7. Minimum levels in a binary tree with $N_L$ number of leaf nodes in $log_2N_L+1$
 
-## Strict Binary tree
-Binary tree with all nodes having either 0 or exactly 2 nodes
+## Full binary tree
+Binary tree with all nodes having exactly 2 or 0 children.
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    B-->E;
+    D-->F;
+    D-->G;
+```
 
 ## Complete binary tree
-Binary tree with all the leaf nodes at the last or second last level with all the nodes in the last level being on the left side of the tree.
+Binary tree with all the leaf nodes at the last or second last level with all the nodes in the last level being on the left side of the tree. Only the last level of the complete binary tree is not full.
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    B-->E;
+    C-->F;
+```
 
-## Full binary tree
-Binray tree with all levels having maximum possible nodes. Such a tree has nodes with exactly 2 children and leaf nodes at the same level.
+1. Given total internal nodes $N_i$ and total leaf nodes $N_l$
+   <p style="text-align: center;">$N_l = N_i + 1$</p>
+2. Total number of nodes in the tree can be given by
+   <p style="text-align: center;">$N = 2N_i + 1$</p>
+   <p style="text-align: center;">$N = 2N_l - 1$</p>
+3. Number of internal nodes given total N nodes
+   <p style="text-align: center;">$N_i = (N-1)/2$</p>
+4. Number of leaf nodes given total N nodes
+   <p style="text-align: center;">$N_l = (N+1)/2$</p>
+
+## Perfect binary tree
+Binary tree with all levels having maximum possible nodes. Such a tree has nodes with exactly 2 children and leaf nodes at the same level.
+
+

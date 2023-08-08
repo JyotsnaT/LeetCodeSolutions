@@ -47,11 +47,27 @@ All the nodes in the heap should satisfy the heap property specified by the foll
             max_heapify(arr, largest)
 
 *Runtime analysis of max_heapify* \
-In the worst case the heapyify function will traverse through from root to bottom leaf node across the levels in the heap. For a heap with number of nodes = n, total levels in the trees = logn.
-Runtime will be in the order of O(logn)
+In the worst case the heapyify function will traverse through from root to bottom leaf node across the levels in the heap. For a heap with number of nodes = n, total levels in the trees = $logn$.
+Runtime will be in the order of $O(logn)$
 
-**Building the heap** : 
+**Building the heap** : A heap is built by calling the max_heapify on elements as they are entered into the array in a bottom up fashion i.e starting from the leaf nodes. At each step the *MaxHEap Property* is to be maintained. Since we insert the leaf nodes first, and all leaf nodes fullfil the *MaxHeap Property* by default. Hence the max_heapify procedure is called for the internal nodes instead. As per the peroperty of complete binary tree, $N_i = (N-1)/2$
+
+    build_max_heap(arr):
+        N = len(arr)
+        for i in range(N/2, 0, -1):
+            max_heapify(arr, i)
+            
+*Runtime analysis of build_max_heap* \
+<ins>Upper bound analysis</ins> : The procedure calls max_heapify n/2 times which takes $logn$ in itself to run. Hence, the upper bound is $O(nlogn)$.\
+
+<ins>Assympototically tight analysis</ins> : If we observe carefully the max_heapify takes O(logn) or O(h). The height of the tree is changing for each node. h=0 for all leaf nodes, h = 1 for all nodes one level up, h = 2 for all nodes before and so on. Given the number of leaf nodes in a tree is $(N+1)/2$, the runtime can be expanded as follows 
+
+    $(N+1)/2*0 + (N+1)/2^2*1 + (N+1)/2^3*2 + ... + 1$
+    $$\left(\sum_{0}^{logn} N/(2^i))$$
+
 
 # Priority Queueus
 
 # Heap sort
+
+##### Ref: CLRS
