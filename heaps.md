@@ -126,7 +126,7 @@ or
         arr.append(sys.minint)
         increase_key(arr, len(arr)-1, key)
 
-*Runtime analysis of insert* : after adding the value to the array which takes constant time in python, the 
+*Runtime analysis of insert* : after adding the value to the array which takes constant time in python, the function checks with it's parent till it finds the correct position for the newly added element. The program will traverse the heap along it's levels hence the runtime will come to be $O(logn)$
 # Heap sort
 
 ##### Ref: CLRS
