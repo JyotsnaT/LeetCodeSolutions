@@ -5,8 +5,8 @@ This is a repository of many LeetCode problems and their solutions. This is main
 As of now only one approach has been coded for most problems and the language of choise is python. But this is a work in progress and more coded solutions will be added eventually.
 
 # Topics and problems under each topic
-This collection of solutions is mainly from software engineering interviews POV. Hence the topics those are most frequently covered in the interviews are solved first. Some of these topics
-might be dense than the other for e.g. Arrays vs intervals. We can later seggregate them into subtopics as well.
+This collection of solutions is mainly from software engineering interviews POV. Hence the topics those are most frequently covered in the interviews are solved first. 
+
 
 1. [Arrays](https://github.com/JyotsnaT/LeetCodeSolutions/blob/main/Arrays.ipynb)
 2. [Back tracking](https://github.com/JyotsnaT/LeetCodeSolutions/blob/main/backtracking.ipynb)
@@ -23,3 +23,8 @@ might be dense than the other for e.g. Arrays vs intervals. We can later seggreg
 13. [Strings](https://github.com/JyotsnaT/LeetCodeSolutions/blob/main/String.ipynb)
 14. [Trees](https://github.com/JyotsnaT/LeetCodeSolutions/blob/main/trees-n-graphs.ipynb)
 15. [Trie](https://github.com/JyotsnaT/LeetCodeSolutions/blob/main/Trie.ipynb)
+
+# TODO
+1. Some of these topics might be dense than the other for e.g. Arrays vs intervals. We can later seggregate them into subtopics as well.
+2. There is no difficulty tag associated as of now to each problem.
+3. The sequence of problems in the notebooks are purely based on the sequence in which each problem as solved and does not follow any pattern best for revision.
